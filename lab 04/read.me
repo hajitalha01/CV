@@ -1,1 +1,76 @@
-lab 04
+# Lab 04: Morphological Image Processing
+
+## Overview
+This lab explores fundamental morphological operations used in Digital Image Processing. These operations work primarily on binary images to modify object shapes, remove noise, detect patterns, and extract object boundaries.
+
+## Objectives
+- Understand binary images and structuring elements.
+- Learn how erosion and dilation modify foreground objects.
+- Understand opening and closing operations.
+- Explore the concept of morphological duality.
+- Learn how the Hit-or-Miss Transform detects specific patterns in binary images.
+
+## Topics Covered
+
+### 1. Binary Images
+- Understanding binary pixel values:
+  - `0` represents black (background).
+  - `1` represents white (foreground).
+- Representing binary images using NumPy matrices.
+
+### 2. Structuring Element (Kernel)
+- Understanding the role of a structuring element in morphological operations.
+- Using kernels of different sizes and shapes.
+- Exploring how kernel size affects image processing results.
+
+### 3. Erosion
+- Applying erosion to binary images.
+- Shrinking foreground objects.
+- Understanding how erosion removes small foreground regions and noise.
+
+### 4. Dilation
+- Applying dilation to binary images.
+- Expanding foreground objects.
+- Understanding how dilation can fill small gaps and connect nearby objects.
+
+### 5. Opening
+- Performing opening using erosion followed by dilation.
+- Removing isolated white pixels and small foreground noise.
+- Observing how opening affects the shape of objects.
+
+### 6. Closing
+- Performing closing using dilation followed by erosion.
+- Closing small gaps and holes in foreground objects.
+- Exploring how closing can connect nearby objects.
+
+### 7. Morphological Duality
+- Understanding the relationship between erosion and dilation.
+- Learning how image complementation relates these operations.
+- Exploring foreground and background transformations.
+
+### 8. Hit-or-Miss Transform
+- Understanding pattern detection in binary images.
+- Using foreground and background conditions to identify specific patterns.
+- Exploring applications such as endpoint and corner detection.
+
+## Technologies Used
+- Python
+- NumPy
+- OpenCV
+- Matplotlib
+- Jupyter Notebook / Google Colab
+
+## Key Learnings
+- Representing and processing binary images using matrices.
+- Understanding how structuring elements affect morphological operations.
+- Comparing the effects of erosion, dilation, opening, and closing.
+- Understanding the mathematical relationship between morphological operations.
+- Applying morphology for noise removal and binary pattern detection.
+- Visualizing image-processing results and pixel values.
+
+## Conclusion
+This lab provided practical experience with fundamental morphological operations in Digital Image Processing. It demonstrated how binary image structures can be modified, cleaned, and analyzed using Python and morphological techniques.
+
+---
+**Course:** Digital Image Processing  
+**Lab:** 04 — Morphological Image Processing
