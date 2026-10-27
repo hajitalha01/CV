@@ -1,1 +1,90 @@
+Lab 06 — Image Segmentation
 
+Point, line and edge detection, gradients, Canny, Hough transform and thresholding, implemented with OpenCV, NumPy, Matplotlib and scikit-image.
+
+Open In Colab
+
+Replace YOUR_USERNAME and YOUR_REPO in the badge link with your GitHub username and repository name.
+
+Overview
+
+Image segmentation partitions an image into meaningful regions.
+
+Discontinuity-based methods detect abrupt changes (points, lines, edges).
+Similarity-based methods group pixels with similar properties (thresholding).
+
+This notebook walks through both approaches with experiments and lab tasks.
+
+Lab Outcomes
+Explain image segmentation and intensity discontinuities
+Use intensity differences to highlight abrupt changes
+Detect points, directional lines and edges using spatial operators
+Compare first- and second-derivative responses near a noisy edge
+Compute gradient magnitude and orientation
+Apply the Canny edge detector and analyze its parameters
+Detect line segments using the Hough transform
+Compare global, Otsu and adaptive thresholding
+Contents
+Experiments
+#	Experiment	Key functions
+1	Image segmentation and intensity difference	np.abs, thresholding
+2	Point, line and Sobel edge detection	cv2.filter2D, cv2.Sobel
+3	First and second derivatives near a noisy edge	np.gradient, cv2.GaussianBlur
+4	Image gradient (magnitude and orientation)	np.arctan2, cv2.normalize
+5	Canny edge detector	cv2.Canny
+6	Hough transform (lines, optional circles)	cv2.HoughLinesP, cv2.HoughCircles
+7	Thresholding (global, Otsu, adaptive)	cv2.threshold, cv2.adaptiveThreshold
+Lab Tasks
+Synthetic image with a bright point, horizontal/vertical/diagonal lines and a step edge, tested with the matching detectors
+Gaussian noise on a step edge: intensity profile and first/second derivatives before and after smoothing
+Canny with three threshold pairs: edge continuity and false detections
+HoughLinesP on a line-containing image: parameters and one missed or false detection
+Global vs Otsu vs adaptive thresholding under uneven illumination, with a justified best result
+
+Each experiment includes code, plots, the lab questions and answer cells.
+
+Getting Started
+Run in Google Colab
+Open the notebook with the Open In Colab badge above, or upload Lab06_Image_Segmentation.ipynb to Colab.
+Choose Runtime → Run all.
+
+All required libraries are preinstalled in Colab. The sample images come from skimage.data, so no extra files are needed.
+
+Run locally
+bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+pip install opencv-python numpy matplotlib scikit-image jupyter
+jupyter notebook Lab06_Image_Segmentation.ipynb
+Requirements
+Python 3.8+
+opencv-python
+numpy
+matplotlib
+scikit-image
+Using Your Own Image
+
+Replace the input line in the setup cell:
+
+python
+gray = cv2.imread("your_image.jpg", cv2.IMREAD_GRAYSCALE)
+
+Keep gray unchanged and store processed results in separate variables.
+
+Key Observations
+Differentiation amplifies noise, so Gaussian smoothing is applied before derivatives. Second derivatives are affected the most.
+Textured regions produce many false edge responses.
+Canny thresholds control the trade-off between weak-edge detection and false edges.
+Hough parameters (threshold, minLineLength, maxLineGap) control missed versus false line detections.
+Under uneven illumination, adaptive thresholding performs better than global or Otsu thresholding.
+Repository Structure
+.
+├── Lab06_Image_Segmentation.ipynb   # Experiments, lab tasks and answers
+└── README.md
+Author
+
+Name: Your Name Reg. No.: Your Registration Number
+
+License
+
+For educational use.
