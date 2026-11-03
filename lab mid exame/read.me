@@ -1,0 +1,160 @@
+# CT Scan Image Processing
+
+A Digital Image Processing project that applies classical image-processing techniques to a lung CT scan image. The objective is to reduce noise, improve image contrast, and detect important edges using Python and OpenCV.
+
+## Project Overview
+
+This project processes a grayscale CT scan image using three image-processing techniques:
+
+1. **Median Filtering** — Reduces unwanted noise while preserving important image details.
+2. **Histogram Equalization** — Enhances image contrast by redistributing pixel intensity values.
+3. **Canny Edge Detection** — Detects edges and highlights boundaries between different structures.
+
+The project also compares different parameter settings to evaluate their effects on the final output.
+
+## Objectives
+
+- Analyze the characteristics and challenges of a CT scan image.
+- Reduce noise and improve image quality.
+- Enhance contrast to make internal structures more visible.
+- Detect lung boundaries and other important edges.
+- Compare processing results using different parameter settings.
+
+## Technologies Used
+
+- Python
+- OpenCV
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+
+## Project Workflow
+
+```text
+Original CT Scan
+       |
+       v
+Median Filtering
+       |
+       v
+Histogram Equalization
+       |
+       v
+Canny Edge Detection
+       |
+       v
+Final Edge Map
+```
+
+## Image Processing Techniques
+
+### 1. Median Filtering
+
+Median filtering reduces unwanted noise by replacing each pixel with the median value of its surrounding neighborhood.
+
+A 3×3 kernel is used as the initial configuration.
+
+### 2. Histogram Equalization
+
+Histogram equalization improves image contrast by redistributing pixel intensity values.
+
+It can make differences between dark and bright regions more visible, although it may also enhance unwanted noise.
+
+### 3. Canny Edge Detection
+
+Canny edge detection identifies changes in image intensity and highlights important boundaries.
+
+The initial threshold values are:
+
+- Lower threshold: 50
+- Upper threshold: 150
+
+Different threshold values are tested to compare edge detection results.
+
+## Experimental Evaluation
+
+The project includes experiments with different parameter settings:
+
+| Technique | Parameters |
+|---|---|
+| Median Filtering | 3×3 and 5×5 kernels |
+| Canny Edge Detection | 30–100 and 100–200 thresholds |
+
+The resulting images are compared to evaluate noise reduction, contrast enhancement, and edge detection.
+
+## Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd YOUR_REPOSITORY
+```
+
+### 3. Install the required libraries
+
+```bash
+pip install opencv-python numpy matplotlib jupyter
+```
+
+### 4. Run the Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Open the project notebook and execute the cells in order.
+
+## Project Structure
+
+```text
+CT-Scan-Image-Processing/
+│
+├── ct_scan.png
+├── CT_Scan_Processing.ipynb
+└── README.md
+```
+
+- `ct_scan.png` — Original CT scan image.
+- `CT_Scan_Processing.ipynb` — Implementation, experiments, and results.
+- `README.md` — Project documentation.
+
+## Results
+
+The processing pipeline produces intermediate and final outputs:
+
+- Noise-reduced CT scan.
+- Contrast-enhanced CT scan.
+- Canny edge detection result.
+- Comparison of different filter sizes and threshold values.
+
+The results demonstrate how classical image-processing techniques can improve the visibility of image structures and highlight boundaries.
+
+## Limitations
+
+- Histogram equalization may enhance unwanted noise.
+- Canny edge detection may detect boundaries of the heart and other structures along with the lungs.
+- Edge detection does not provide complete lung segmentation.
+- Results depend on image quality and parameter settings.
+
+## Conclusion
+
+This project demonstrates the use of classical image-processing techniques for CT scan enhancement and edge detection. Median filtering, histogram equalization, and Canny edge detection are combined to reduce noise, improve contrast, and highlight important boundaries.
+
+The experimental comparison helps identify suitable parameter settings for the given image.
+
+## Disclaimer
+
+This project is intended for educational purposes only. The processed images are not intended for medical diagnosis or clinical decision-making.
+
+## Author
+
+**Muhammad Talha Ramzan**
+
+BS Artificial Intelligence  
+Sir Syed CASE Institute of Technology
