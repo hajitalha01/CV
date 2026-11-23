@@ -1,0 +1,55 @@
+Overview
+
+This lab builds a small fully connected Multi-Layer Perceptron (MLP) from scratch with NumPy to understand how information moves forward through a network and how the error signal moves backward to update its parameters.
+
+Architecture: 2 inputs -> 2 hidden units -> 1 output (sigmoid)
+
+The model takes a 2D feature vector (not a raw image) and is used to learn the dense-layer and gradient-flow concepts that appear inside larger deep learning systems.
+
+What is covered
+Forward propagation with ReLU, tanh and sigmoid activations
+Binary cross-entropy (BCE) loss
+Backpropagation using the chain rule (sigmoid + BCE gives dL/dz2 = y - t)
+One gradient-descent update and a new forward pass to confirm the loss decreases
+Gradient verification using an independent implementation (finite differences in NumPy, and PyTorch autograd)
+Experiments
+Replace ReLU with tanh and compare hidden activations and output probability
+Change the target from t = 1 to t = 0 and recompute loss and gradients
+Compare learning rates 0.01, 0.1 and 0.5
+Use one positive and one negative pre-activation to see the ReLU derivative mask
+Compare manual gradients with PyTorch autograd (maximum absolute difference)
+
+An observation table summarising the results is included at the end of the notebook.
+
+Key results (ReLU, t = 1, lr = 0.1)
+Quantity	Value
+Hidden pre-activation z1	[1.5, -4.0]
+Hidden output h	[1.5, 0.0]
+Output probability y	0.880797
+BCE loss	0.126928
+Loss after one update	0.093081
+Max gradient difference (finite differences)	~8.6e-11
+Files
+File	Description
+Lab_07_Neural_Network_2330-0141.ipynb	Complete lab notebook with code, outputs and observations
+README.md	Project description
+Requirements
+Python 3.8+
+NumPy
+pandas
+Jupyter Notebook or JupyterLab
+PyTorch (optional, only for the autograd verification cell)
+bash
+pip install numpy pandas notebook
+pip install torch   # optional
+How to run
+bash
+git clone <your-repo-url>
+cd <your-repo-folder>
+jupyter notebook Lab_07_Neural_Network_2330-0141.ipynb
+
+Then run all cells (Kernel -> Restart & Run All). The notebook also runs in Google Colab.
+
+Author
+
+Muhammad Talha Ramzan
